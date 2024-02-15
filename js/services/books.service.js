@@ -1,12 +1,12 @@
 'use strict'
 
 var gBooks =[ 
-{id: 'bg4J78',
+{id: makeId(),
     title: 'The adventures of Lori Ipsi',
     price: 120,
     imgUrl: 'lori-ipsi.jpg'
 },
-{id: 'bg4J44',
+{id: makeId(),
     title: 'World atlas',
     price: 200,
     imgUrl: 'lori-ipsi.jpg'
@@ -24,4 +24,18 @@ function removeBook(bookId){
 function updateBook(bookId, bookPrice){
     const book = gBooks.find(book => book.id === bookId)
     book.price = bookPrice
+}
+
+function addBook(title, price){
+    const book = _createBook(title, price)
+    gBooks.push(book)
+}
+
+function _createBook(title, price) {
+    return {
+        id: makeId(),
+        title: title,
+        price: price,
+        imgUrl: 'lori-ipsi.jpg'
+    }
 }
