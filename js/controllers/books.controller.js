@@ -13,7 +13,7 @@ function renderBooks() {
         <td class="btns">
             <button class="Read-btn">Read</button>
             <button class="Update-btn">Update</button>
-            <button class="Delete-btn">Delete</button>
+            <button onclick="onRemoveBook(event,'${book.id}')">Delete</button>
         </td>
         </tr>
     `)
@@ -22,4 +22,10 @@ function renderBooks() {
     elTable.innerHTML = strHTMLs.join('')
 
     // renderStats()
+}
+
+function onRemoveBook(ev,bookId){
+    ev.stopPropagation()
+    removeBook(bookId)
+    renderBooks()
 }
