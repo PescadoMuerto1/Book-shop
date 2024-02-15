@@ -2,11 +2,76 @@
     box-sizing: border-box;
 }
 
-table,th,td{
-    border: 1px solid grey;
-    border-collapse: collapse;
+body{
+   
 }
 
-.header{
-    background-color: rgb(173, 170, 170);
+header{
+    display: flex;
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 4%;
+    background-color: rgb(23, 125, 188);
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-block-start: 10%;
+    border: 0.5px solid grey;
+    width: fit-content;
+}
+
+.book-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 170px;
+    max-height: 220px;
+    border: 0.5px solid grey;
+}
+
+img{
+    width: 95%;
+    padding: 7px;
+    margin-block-start: 5px;
+}
+
+.book-title{
+   padding: 5px;
+   text-align: center;
+}
+
+.book-price{
+    padding: 2px;
+    text-align: center;
+    color: rgb(190, 46, 13);
+}
+
+.options{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 216px;
+    flex-direction: column;
+    background-color: rgba(137, 143, 142, 0.85);
+    opacity: 0;
+
+    gap: 15%;
+}
+
+.options:hover{
+    opacity: 1;
+}
+
+button{
+    background-color: rgb(122, 125, 128);
+    padding: 3%;
+    width: 60%;
+    border-radius: 10%;
 }

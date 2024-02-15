@@ -6,21 +6,44 @@
     <title>Book-shop</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="onInit()">
-    <table>
-        <thead>
-            <tr class="header">
-                <th>Title</th>
-                <th>Price</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<body>
+    
+    <header>Add book</header>
 
-        </tbody>
-    </table>
+    <div class="box">
+        <div class="book-container">
+            <img src="img/img1.jpg" alt="">
+            <div class="book-title">Harry potter</div>
+            <div class="book-price">$55</div>
+            
+            <div class="options">
+                    <button class="update-btn">Update Book</button>
+                    <button class="remove">Remove book</button>
+            </div>
+        </div>
 
-    <button class="add-book" onclick="onAddBook()">Add book</button>
+        <div class="book-container">
+            <img src="img/img2.jpg" alt="">
+            <div class="book-title">Harry potter</div>
+            <div class="book-price">$55</div>
+            
+            <div class="options">
+                <button class="update-btn">Update Book</button>
+                <button class="remove">Remove book</button>
+        </div>
+        </div>
+        <div class="book-container">
+            <img src="img/img3.jpg" alt="">
+            <div class="book-title">Harry potter</div>
+            <div class="book-price">$55</div>
+            
+            <div class="options">
+                <button class="update-btn">Update Book</button>
+                <button class="remove">Remove book</button>
+        </div>
+    </div>
+
+    <!-- <button class="add-book" onclick="onAddBook()">Add book</button> -->
 
     <script src="/js/utils.js"></script>
     <script src="/js/services/books.service.js"></script>
