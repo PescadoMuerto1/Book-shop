@@ -22,7 +22,6 @@ function renderBooks() {
     const elTable = document.querySelector('.box')
     elTable.innerHTML = strHTMLs.join('')
 
-    // renderStats()
 }
 
 function onRemoveBook(ev,bookId){
