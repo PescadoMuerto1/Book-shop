@@ -12,7 +12,7 @@ function renderBooks() {
         <td class="book-price">${book.price}</td>
         <td class="btns">
             <button class="Read-btn">Read</button>
-            <button class="Update-btn">Update</button>
+            <button onclick="onUpdateBook(event,'${book.id}')">Update</button>
             <button onclick="onRemoveBook(event,'${book.id}')">Delete</button>
         </td>
         </tr>
@@ -27,5 +27,12 @@ function renderBooks() {
 function onRemoveBook(ev,bookId){
     ev.stopPropagation()
     removeBook(bookId)
+    renderBooks()
+}
+
+function onUpdateBook(ev,bookId){
+    ev.stopPropagation()
+    const bookPrice = prompt('enter the new price')
+    updateBook(bookId, bookPrice)
     renderBooks()
 }
