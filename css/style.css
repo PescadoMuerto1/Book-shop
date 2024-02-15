@@ -9,9 +9,14 @@ body{
 header{
     display: flex;
     position: fixed;
+    align-items: center;
     inset: 0 0 auto 0;
     height: 4%;
-    background-color: rgb(23, 125, 188);
+    background-color: rgb(103, 108, 111);
+}
+
+header a{
+    margin-inline-start: 5%;
 }
 
 .box{
@@ -69,9 +74,13 @@ img{
     opacity: 1;
 }
 
-button{
+.options button{
     background-color: rgb(122, 125, 128);
     padding: 3%;
     width: 60%;
     border-radius: 10%;
+}
+
+a, button{
+    cursor: grab;
 }

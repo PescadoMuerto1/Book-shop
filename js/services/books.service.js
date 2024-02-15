@@ -2,14 +2,19 @@
 
 var gBooks =[ 
 {id: makeId(),
-    title: 'The adventures of Lori Ipsi',
+    title: 'The adventures',
     price: 120,
-    imgUrl: 'lori-ipsi.jpg'
+    imgUrl: 'img1.jpg'
+},
+{id: makeId(),
+    title: 'Harry Potter',
+    price: 80,
+    imgUrl: 'img3.jpg'
 },
 {id: makeId(),
     title: 'World atlas',
     price: 200,
-    imgUrl: 'lori-ipsi.jpg'
+    imgUrl: 'img2.jpg'
 }]
 
 function getBooks(){
@@ -26,16 +31,16 @@ function updateBook(bookId, bookPrice){
     book.price = bookPrice
 }
 
-function addBook(title, price){
-    const book = _createBook(title, price)
+function addBook(title, price, img){
+    const book = _createBook(title, price, img)
     gBooks.push(book)
 }
 
-function _createBook(title, price) {
+function _createBook(title, price, img) {
     return {
         id: makeId(),
         title: title,
         price: price,
-        imgUrl: 'lori-ipsi.jpg'
+        imgUrl: img
     }
 }

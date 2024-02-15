@@ -7,18 +7,19 @@ function onInit(){
 function renderBooks() {
     const books = getBooks()
     const strHTMLs = books.map(book => `
-        <tr>
-        <td class="book-title">${book.title}</td>
-        <td class="book-price">${book.price}</td>
-        <td class="btns">
-            <button class="Read-btn">Read</button>
-            <button onclick="onUpdateBook(event,'${book.id}')">Update</button>
-            <button onclick="onRemoveBook(event,'${book.id}')">Delete</button>
-        </td>
-        </tr>
+    <div class="book-container">
+    <img src="img/${book.imgUrl}" alt="">
+    <div class="book-title">${book.title}</div>
+    <div class="book-price">${book.price}</div>
+    
+    <div class="options">
+            <button onclick="onUpdateBook(event,'${book.id}')" >Update Book</button>
+            <button onclick="onRemoveBook(event,'${book.id}')" >Remove book</button>
+    </div>
+</div>
     `)
 
-    const elTable = document.querySelector('tbody')
+    const elTable = document.querySelector('.box')
     elTable.innerHTML = strHTMLs.join('')
 
     // renderStats()
@@ -40,6 +41,7 @@ function onUpdateBook(ev,bookId){
 function onAddBook(){
     const title = prompt('enter new book title')
     const price = prompt('enter new book price')
-    addBook(title, price)
+    const img = prompt('enter new book img')
+    addBook(title, price, img)
     renderBooks()
 }
