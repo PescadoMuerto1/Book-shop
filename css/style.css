@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+table,th,td{
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+.header{
+    background-color: rgb(173, 170, 170);
+}
