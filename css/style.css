@@ -84,3 +84,58 @@ img{
 a, button{
     cursor: grab;
 }
+
+.add-book-modal{
+    height: 30%;
+    width: 40%;
+    background-color: rgb(163, 162, 162);
+}
+
+.add-book-modal form{
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.add-book-modal input, textarea{
+    width: 70%;
+    height: 77%;
+    background-color: rgb(215, 215, 215);
+    padding: 2%;
+    outline: none;
+}
+
+.add-book-modal input::placeholder{
+    /* color: rgb(8, 8, 8); */
+}
+
+.close-modal{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 100%;
+}
+
+.add-btn{
+    width: 20%;
+    min-width: fit-content;
+    margin-top: 3%;
+    background-color: rgba(52, 51, 51, 0.752);
+    color: rgb(161, 159, 159);
+}
+
+.add-book-modal input[type=text]:focus{
+    border: 2.2px solid black;
+}
+
+.add-book-modal::backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.add-book-modal h1{
+    font-size: 100%;
+}

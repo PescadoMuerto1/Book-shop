@@ -1,5 +1,7 @@
 'use strict'
 
+var gIsNotEmpty = true
+
 function onInit(){
     renderBooks()
 }
@@ -37,10 +39,43 @@ function onUpdateBook(ev,bookId){
     renderBooks()
 }
 
-function onAddBook(){
-    const title = prompt('enter new book title')
-    const price = prompt('enter new book price')
-    const img = prompt('enter new book img')
+function onBtnAdd(){
+    document.querySelector('.add-book-modal').showModal()
+}
+
+function onAddBook(ev){
+    const elInputs = document.querySelector('.modal-form')
+    const els = elInputs.querySelectorAll('input')
+    
+    handleInputs(els, ev)
+    if(!gIsNotEmpty) return
+
+    const title = elInputs.querySelector('.title').value
+    const price = elInputs.querySelector('.price').value
+    const img = elInputs.querySelector('.img-link').value
     addBook(title, price, img)
     renderBooks()
 }
+
+function handleInputs(els, ev){
+    gIsNotEmpty = true
+    els.forEach(el => {
+        if(!el.value) {
+            ev.preventDefault()
+            el.style.outline = '2px solid red'
+            gIsNotEmpty = false
+            return 
+        }
+        el.style.outline = 'none'
+        return 
+    })
+}
+
+function onEventInput(ev, id){
+    const inputs = document.querySelectorAll('.modal-form input')
+    if(ev.keyCode === 13){
+        ev.preventDefault()
+        inputs[id+1].focus()
+    }
+}
+
