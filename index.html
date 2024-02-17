@@ -10,7 +10,8 @@
     
     <header>
         <a onclick="onBtnAdd()">Add book</a>
-        <input class="search-bar" oninput="onSearch()" type="text" placeholder="Search🔎">
+        <input class="search-bar" oninput="onSearch(this)" type="text" placeholder="Search🔎">
+        <button class="clear-search" onclick="onClearSearch()">X</button>
     </header>
 
     <div class="box"></div>

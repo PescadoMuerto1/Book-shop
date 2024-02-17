@@ -6,8 +6,7 @@ function onInit(){
     renderBooks()
 }
 
-function renderBooks() {
-    const books = getBooks()
+function renderBooks(books = getBooks()) {
     const strHTMLs = books.map(book => `
     <div class="book-container">
     <img src="img/${book.imgUrl}" alt="">
@@ -79,6 +78,13 @@ function onEventInput(ev, id){
     }
 }
 
-function onSearch(){
-    
+function onSearch(el){
+    var books = searchBooks(el.value)
+    books = sortBooks(books)
+    renderBooks(books)
+}
+
+function onClearSearch(){
+    document.querySelector('.search-bar').value = ''
+    renderBooks()
 }

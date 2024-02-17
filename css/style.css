@@ -7,7 +7,7 @@ body{
 }
 
 header{
-    display: grid;
+    display: flex;
     position: fixed;
     align-items: center;
     inset: 0 0 auto 0;
@@ -141,12 +141,14 @@ a, button{
 }
 
 .search-bar{
-    justify-self: end;
-    /* background-color: transparent; */
     border: none;
     outline: none;
 }
 
 .search-bar::placeholder{
     color: rgb(62, 60, 60);
+}
+
+.clear-search{
+    
 }

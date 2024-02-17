@@ -50,6 +50,10 @@ function _saveBooks(){
     saveToStorage(BOOK_DB, gBooks)
 }
 
-function filterBooks(letters){
-    gBooks.sort(book => )
+function searchBooks(letters){
+    return gBooks.filter(book => book.title.toLowerCase().startsWith(letters.toLowerCase()))
+}
+
+function sortBooks(books){
+    return books.sort((a,b) => a.title < b.title ? -1 : 1)
 }
