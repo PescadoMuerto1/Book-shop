@@ -49,3 +49,7 @@ function _createBook(title, price, img) {
 function _saveBooks(){
     saveToStorage(BOOK_DB, gBooks)
 }
+
+function filterBooks(letters){
+    gBooks.sort(book => )
+}

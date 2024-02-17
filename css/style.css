@@ -7,11 +7,11 @@ body{
 }
 
 header{
-    display: flex;
+    display: grid;
     position: fixed;
     align-items: center;
     inset: 0 0 auto 0;
-    height: 4%;
+    height: 7%;
     background-color: rgb(103, 108, 111);
 }
 
@@ -138,4 +138,15 @@ a, button{
 
 .add-book-modal h1{
     font-size: 100%;
+}
+
+.search-bar{
+    justify-self: end;
+    /* background-color: transparent; */
+    border: none;
+    outline: none;
+}
+
+.search-bar::placeholder{
+    color: rgb(62, 60, 60);
 }
