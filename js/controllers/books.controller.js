@@ -29,6 +29,7 @@ function onRemoveBook(ev,bookId){
     ev.stopPropagation()
     removeBook(bookId)
     renderBooks()
+    onSuccess('removed')
 }
 
 function onUpdateBook(ev,bookId){
@@ -36,6 +37,7 @@ function onUpdateBook(ev,bookId){
     const bookPrice = prompt('enter the new price')
     updateBook(bookId, bookPrice)
     renderBooks()
+    onSuccess('updated')
 }
 
 function onBtnAdd(){
@@ -54,6 +56,7 @@ function onAddBook(ev){
     const img = elInputs.querySelector('.img-link').value
     addBook(title, price, img)
     renderBooks()
+    onSuccess('added')
 }
 
 function handleInputs(els, ev){
@@ -87,4 +90,14 @@ function onSearch(el){
 function onClearSearch(){
     document.querySelector('.search-bar').value = ''
     renderBooks()
+}
+
+function onSuccess(str){
+
+    const msg = document.querySelector('.user-msg')
+    msg.classList.remove('hide')
+    msg.querySelector('span').innerText = str
+    
+    
+    setTimeout(()=> msg.classList.add('hide'),2000)
 }

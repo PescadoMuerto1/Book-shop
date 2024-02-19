@@ -17,16 +17,17 @@
     <div class="box"></div>
 
     <dialog class="add-book-modal">
-        <form class="modal-form">
+        <form class="modal-form" method="dialog">
             <button class="close-modal">x</button>
             <h1>Add Book</h1>
             <input onkeydown="onEventInput(event, 0)" class="title" type="text" placeholder="Title">
-            <input onkeydown="onEventInput(event, 1)" class="price" type="text" placeholder="Price">
+            <input onkeydown="onEventInput(event, 1)" class="price" type="number" placeholder="Price">
             <input onkeydown="onEventInput(event, 2)" class="img-link" type="text" placeholder="img-link">
             
             <button onclick="onAddBook(event)" type="submit" class="add-btn">Submit</button>
         </form>
     </dialog>
+            <div class="user-msg hide">You successfully <span></span> a Book</div>
 
     <script src="js/utils.js"></script>
     <script src="js/services/storage.service.js"></script>

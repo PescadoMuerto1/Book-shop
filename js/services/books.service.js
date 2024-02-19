@@ -9,7 +9,7 @@ function getBooks(){
 
 function removeBook(bookId){
     const bookIdx = gBooks.findIndex(book => book.id === bookId)
-    gBooks.splice(bookIdx, 1)
+    if (bookIdx !== -1)gBooks.splice(bookIdx, 1)
     _saveBooks()
 }
 
@@ -51,9 +51,9 @@ function _saveBooks(){
 }
 
 function searchBooks(letters){
-    return gBooks.filter(book => book.title.toLowerCase().startsWith(letters.toLowerCase()))
+    return gBooks.filter(book => book.title.toLowerCase().includes(letters.toLowerCase()))
 }
 
 function sortBooks(books){
-    return books.sort((a,b) => a.title < b.title ? -1 : 1)
+    return books.sort((a,b) => localeCompare(a.title < b.title))
 }
