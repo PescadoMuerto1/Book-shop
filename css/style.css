@@ -3,7 +3,11 @@
 }
 
 body{
-   
+    display: flex;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 header{
@@ -17,6 +21,20 @@ header{
 
 header a{
     margin-inline-start: 5%;
+}
+
+.side-bar{
+    display: flex;
+    
+   
+    flex-direction: column;
+    background-color: rgba(107, 108, 109, 0.952);
+    width: 15%;
+    height: 520px;
+    margin: 20px;
+    margin-block-start: 100px;
+    border-radius: 7%;
+    padding: 10px;
 }
 
 .box{
@@ -39,7 +57,7 @@ header a{
     border: 0.5px solid grey;
 }
 
-img{
+.book-container img{
     width: 95%;
     padding: 7px;
     margin-block-start: 5px;
@@ -143,6 +161,10 @@ a, button{
 .search-bar{
     border: none;
     outline: none;
+    width: 95%;
+    height: 100%;
+    place-self: center start;
+
 }
 
 .search-bar::placeholder{
@@ -158,6 +180,33 @@ a, button{
     padding: 5px;
 }
 
+.clear-search{
+    height: 100%;
+    align-self: center;
+}
+
 .hide{
     display: none;
+}
+
+.rating{
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 20px;
+    gap: 3px;
+}
+
+.rating h2{
+    margin-block: 0;
+    font-size: 115%;         
+}
+
+.stars{
+    width: 60%;
+}
+
+.search-container{
+    display: flex;
+    gap: 4px;
+    height: 5%;
 }

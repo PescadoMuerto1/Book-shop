@@ -16,6 +16,7 @@ function renderBooks(books = getBooks()) {
     <div class="options">
             <button onclick="onUpdateBook(event,'${book.id}')" >Update Book</button>
             <button onclick="onRemoveBook(event,'${book.id}')" >Remove book</button>
+            <button onclick="onReadBook(event,'${book.id}')" >Read book</button>
     </div>
 </div>
     `)

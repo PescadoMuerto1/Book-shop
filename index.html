@@ -4,16 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book-shop</title>
+
+    <script src="https://kit.fontawesome.com/57223ba89b.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="onInit()">
     
     <header>
-        <a onclick="onBtnAdd()">Add book</a>
-        <input class="search-bar" oninput="onSearch(this)" type="text" placeholder="Search🔎">
-        <button class="clear-search" onclick="onClearSearch()">X</button>
+        
     </header>
+    
+    <section class="side-bar">
+        <section class="search-container">
+            <input class="search-bar" oninput="onSearch(this)" type="text" placeholder="Search🔎">
+            <button class="clear-search" onclick="onClearSearch()">X</button>
+        </section>
+        <label class="rating">
+            <!-- <p class="book-rating" onchange="onSetFilterBy()"> -->
+                <h2>Minimum Rating</h2>
+                <img class="stars" src="img/5stars.png" alt="5-stars">
+                <img class="stars" src="img/4stars.png" alt="5-stars">
+                <img class="stars" src="img/3stars.png" alt="5-stars">
+                <img class="stars" src="img/2stars.png" alt="5-stars">
+                <img class="stars" src="img/1star.png" alt="5-stars">
+                
+          
+        </label>
+        |
+        <div class="sort-by">
+          <label>
+            Sort by
+            <select onchange="onSetSortBy()">
+              <option value="">Select Sorting</option>
+              <option value="title">Title</option>
+              <option value="rating">Rating</option>
+              <option value="price">Price</option>
+            </select>
+          </label>
 
+          <!-- <label>
+          <input class="sort-desc" type="checkbox" oninput="onSetSortBy()" />
+          <span>Descending</span>
+        </label> -->
+          <input
+            type="radio"
+            class="ascending-radio"
+            name="sort-by"
+            value="1"
+            onchange="onSetSortBy()"
+            checked
+          />
+          <label for="ascending-radio">Ascending</label>
+
+          <input
+            type="radio"
+            class="descending-radio"
+            name="sort-by"
+            value="-1"
+            onchange="onSetSortBy()"
+          />
+          <label for="descending-radio">Descending</label>
+        <a onclick="onBtnAdd()">Add book</a>
+    </section>
+   
     <div class="box"></div>
 
     <dialog class="add-book-modal">
